@@ -149,8 +149,8 @@
 | `username`     | `test`   | 代理 Basic Auth 的用户名        |
 | `password`     | `123456` | 代理 Basic Auth 的密码          |
 | `download_url` | _(可选)_ | 应用二进制压缩包的下载地址      |
-| `http_proxy`   | _(可选)_ | 容器内 HTTP 代理，用于加速下载  |
-| `https_proxy`  | _(可选)_ | 容器内 HTTPS 代理，用于加速下载 |
+| `http_proxy`   | _(可选)_ | 容器内 HTTP 代理，用于加速下载/访问雀魂服务器  |
+| `https_proxy`  | _(可选)_ | 容器内 HTTPS 代理，用于加速下载/访问雀魂服务器 |
 
 其中 `download_url` 为可选：
 
