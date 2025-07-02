@@ -25,6 +25,13 @@ fi
 PROXY_USER=${username:-test}
 PROXY_PASS=${password:-123456}
 
+if [ -n "${http_proxy}" ]; then
+  HTTP_PROXY=${http_proxy}
+fi
+if [ -n "${https_proxy}" ]; then
+  HTTPS_PROXY=${https_proxy}
+fi
+
 cat > /etc/tinyproxy/tinyproxy.conf <<EOF
 User tinyproxy
 Group tinyproxy
