@@ -1,0 +1,18 @@
+services:
+  majsoul-proxy:
+    image: arthals/majsoul-max-rs:latest
+    restart: unless-stopped
+    ports:
+      - "8888:23411"
+    volumes:
+      - ./app:/app
+    environment:
+      - username=test
+      - password=123456
+      # Github 代理下载
+      - download_url=https://ghproxy.net/https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.7/majsoul_max_rs-0.6.7-x86_64-unknown-linux-gnu.tar.gz
+      # 原始下载
+      # - download_url=https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.7/majsoul_max_rs-0.6.7-x86_64-unknown-linux-gnu.tar.gz
+      # 可选：代理下载
+      # - http_proxy=${HTTP_PROXY:-http://172.17.0.1:7890}
+      # - https_proxy=${HTTPS_PROXY:-http://172.17.0.1:7890}
