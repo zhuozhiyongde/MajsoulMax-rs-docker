@@ -1,6 +1,6 @@
-# 🀄 Majsoul Max RS Docker
+# 🀄 MajsoulMax-rs-docker
 
-本仓库提供了基于 Docker / Docker-Compose 的一键部署方案，帮助你快速在任何支持容器的主机上运行 [Majsoul Max RS](https://github.com/Xerxes-2/MajsoulMax-rs)，并设置带鉴权的 HTTP 代理。
+本仓库提供了基于 Docker / Docker-Compose 的一键部署方案，帮助你快速在任何支持容器的主机上运行 [MajsoulMax-rs](https://github.com/Xerxes-2/MajsoulMax-rs)，并设置带鉴权的 HTTP 代理。
 
 ## 📂 目录结构
 
@@ -121,7 +121,10 @@
 
 5. **配置证书信任**
 
-   下载 [hudsucker.cer](https://github.com/omjadas/hudsucker/blob/main/examples/ca/hudsucker.cer) 证书（**如果你觉得不安全，请从原仓库重新打包二进制执行文件并替换 `app/` 目录下的**），并添加到本地钥匙链中。
+   下载 [hudsucker.cer](https://github.com/omjadas/hudsucker/blob/main/examples/ca/hudsucker.cer) 证书，并添加到本地钥匙链中。
+
+   > [!CAUTION]
+   > **如果你觉得不安全，请从原仓库中替换 CA 证书，重新打包二进制执行文件并替换 `app/` 目录下的 `majsoul_max_rs` 文件。**
 
    macOS：
 
