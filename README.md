@@ -124,7 +124,8 @@
    下载 [hudsucker.cer](https://github.com/omjadas/hudsucker/blob/main/examples/ca/hudsucker.cer) 证书，并添加到本地钥匙链中。
 
    > [!CAUTION]
-   > **如果你觉得不安全，请从原仓库中替换 CA 证书，重新打包二进制执行文件并替换 `app/` 目录下的 `majsoul_max_rs` 文件。**
+   >
+   > **如果你觉得不安全，请从 [原仓库](https://github.com/Xerxes-2/MajsoulMax-rs) 中替换 CA 证书，重新编译打包二进制执行文件，然后替换 `app/` 目录下的 `majsoul_max_rs` 文件。**
 
    macOS：
 
@@ -189,14 +190,14 @@ docker build -t my-majsoul-max-rs .
 ## 🙋 常见问题
 
 1. **镜像下载缓慢 / 失败？**  
-   - 可在 `docker-compose.yml` 中启用 `http_proxy`/`https_proxy` 环境变量使用代理；  
+   - 可在 `docker-compose.yml` 中启用 `http_proxy`/`https_proxy` 环境变量使用代理；
    - 或将 `download_url` 改为镜像站（示例中已给出 `ghproxy.net` 的加速地址）。
 
-2. **出现 `DOWNLOAD_URL is not set` 报错？**  
-   - 请确保在 `docker-compose.yml` 中正确设置了 `download_url`。
-
-3. **端口占用？**  
+2. **端口占用？**  
    - 将 `8888:23411` 左侧改为其他未占用端口并重启容器即可。
+
+3. **修改 `app/` 目录提示没有权限？**
+   - 原因是 docker 默认创建的容器目录权限没有你的用户权限，需要修改目录权限。执行 `sudo chmod -R 777 app` 即可。
 
 ## 📜 License
 
