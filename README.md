@@ -89,24 +89,27 @@
        - DIRECT
        type: select
    rules:
-   - PROCESS-NAME,雀魂麻將,🀄 雀魂麻将
-   - DOMAIN-SUFFIX,game.maj-soul.com,🀄 雀魂麻将
-   - DOMAIN-KEYWORD,majsoul,🀄 雀魂麻将
-   - DOMAIN-KEYWORD,maj-soul,🀄 雀魂麻将
-   - DOMAIN-KEYWORD,catmjstudio,🀄 雀魂麻将
-   - DOMAIN-KEYWORD,catmajsoul,🀄 雀魂麻将
-   - IP-CIDR,146.66.155.0/24,🀄 雀魂麻将
-   - IP-CIDR,185.25.182.18/32,🀄 雀魂麻将
-   - IP-CIDR,203.107.63.200/32,🀄 雀魂麻将
+   -   PROCESS-NAME,雀魂麻將,🀄 雀魂麻将
+   -   PROCESS-NAME,jantama_mahjongsoul.exe,🀄 雀魂麻将
+   -   DOMAIN-SUFFIX,game.maj-soul.com,🀄 雀魂麻将
+   -   DOMAIN-KEYWORD,majsoul,🀄 雀魂麻将
+   -   DOMAIN-KEYWORD,maj-soul,🀄 雀魂麻将
+   -   DOMAIN-KEYWORD,catmjstudio,🀄 雀魂麻将
+   -   DOMAIN-KEYWORD,catmajsoul,🀄 雀魂麻将
+   -   IP-CIDR,146.66.155.0/24,🀄 雀魂麻将
+   -   IP-CIDR,185.25.182.18/32,🀄 雀魂麻将
+   -   IP-CIDR,203.107.63.200/32,🀄 雀魂麻将
    ```
 
    Surge 配置示例：
 
-   ```yml
+   ```text
    [Proxy]
    Majsoul = http, your_server_ip, 8888, test, 123456
+
    [Proxy Group]
    🀄 雀魂麻将 = select, Majsoul, DIRECT
+
    [Rule]
    PROCESS-NAME,雀魂麻將,🀄 雀魂麻将
    DOMAIN-SUFFIX,game.maj-soul.com,🀄 雀魂麻将
@@ -197,6 +200,9 @@ docker build -t my-majsoul-max-rs .
 
 3. **修改 `app/` 目录提示没有权限？**
    - 原因是 docker 默认创建的容器目录权限没有你的用户权限，需要修改目录权限。执行 `sudo chmod -R 777 app` 即可。
+
+4. **与 [Akagi](https://github.com/shinkuan/Akagi) 联合使用？**
+   - 配置你的代理链，形成 `雀魂 -> MajsoulMax-rs -> Akagi -> 官方服务器` 的代理链即可。
 
 ## 📜 License
 
