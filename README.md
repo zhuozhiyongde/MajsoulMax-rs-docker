@@ -204,6 +204,12 @@ docker build -t my-majsoul-max-rs .
 4. **与 [Akagi](https://github.com/shinkuan/Akagi) 联合使用？**
    - 配置你的代理链，形成 `雀魂 -> MajsoulMax-rs -> Akagi -> 官方服务器` 的代理链即可。
 
-## 📜 License
+## 🌟 致谢
+
+- [MajsoulMax](https://github.com/Avenshy/MajsoulMax)
+- [MajsoulMax-rs](https://github.com/Xerxes-2/MajsoulMax-rs)
+- [Akagi](https://github.com/shinkuan/Akagi)
+
+## 📜 许可证
 
 本仓库文件遵循与 [Majsoul Max RS](https://github.com/Xerxes-2/MajsoulMax-rs) 相同的许可证 [GPL-3.0](https://github.com/Xerxes-2/MajsoulMax-rs/blob/main/LICENSE)，详情请参阅上游项目。 
