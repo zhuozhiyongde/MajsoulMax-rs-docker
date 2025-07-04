@@ -123,10 +123,6 @@
 
    下载 [hudsucker.cer](https://github.com/omjadas/hudsucker/blob/main/examples/ca/hudsucker.cer) 证书，并添加到本地钥匙链中。
 
-   > [!CAUTION]
-   >
-   > **如果你觉得不安全，请从 [原仓库](https://github.com/Xerxes-2/MajsoulMax-rs) 中替换 CA 证书，重新编译打包二进制执行文件，然后替换 `app/` 目录下的 `majsoul_max_rs` 文件。**
-
    macOS：
 
    1. 将下载好的 hudsucker.cer 拖入到 `钥匙串访问-系统-证书` 中
@@ -143,6 +139,9 @@
    2. 前往 `通用-关于本机-证书信任设置`，打开 Hudsucker Industries 的选项
 
    ![image-20250703000158921](./README.assets/image-20250703000158921.png)
+
+> [!CAUTION]
+> **如果你觉得不安全，请从 [原仓库](https://github.com/Xerxes-2/MajsoulMax-rs) 中替换 CA 证书，重新编译打包二进制执行文件，然后替换 `app/` 目录下的 `majsoul_max_rs` 文件。**
 
 ## ⚙️ 参数说明
 
