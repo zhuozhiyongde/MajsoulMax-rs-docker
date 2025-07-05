@@ -208,8 +208,15 @@ docker build -t my-majsoul-max-rs .
 3. **修改 `app/` 目录提示没有权限？**
    - 原因是 docker 默认创建的容器目录权限没有你的用户权限，需要修改目录权限。执行 `sudo chmod -R 777 app` 即可。
 
-4. **与 [Akagi](https://github.com/shinkuan/Akagi) 联合使用？**
-   - 此时需要 Akagi 和 MajsoulMax-rs 部署在一起（同时本地或同时 VPS），然后配置你的代理链，形成 `雀魂 -> MajsoulMax-rs -> Akagi -> 官方服务器` 的代理链即可，**注意避免回环代理**，确保从 Akagi 的出流量不会被重新代理回 MajsoulMax-rs。并且你需要同时信任两个 MITM 自签名证书，包括 `MajsoulMax-rs` 的 `hudsucker.cer` 和 `Akagi` 的 `~/.mitmproxy/mitmproxy-ca.pem`。
+4. **提示链接失败？**
+   - 先尝试切换游戏内连接线路，如果不行再按照如下思路进行排查：
+      1. 代理节点是否通畅（使用 curl 测试，检查服务器是否放行对应端口 TCP/UDP）
+      2. 检查自签名证书是否正确安装并信任
+      3. 检查代理软件 TUN 模式是否开启，以及对应软件/域名/IP 是否被规则正确分流
+      4. 如果还有问题，请提 issue。
+
+5. **与 [Akagi](https://github.com/shinkuan/Akagi) 联合使用？**
+   - 此时需要 Akagi 和 MajsoulMax-rs 部署在一起（同时本地或同时 VPS），然后配置你的代理链，形成 `雀魂 -> MajsoulMax-rs -> Akagi -> 官方服务器` 的代理链即可，**注意避免回环代理**，确保从 Akagi 的出流量不会被重新代理回 MajsoulMax-rs。并且你需要同时信任两个 MITM 自签名证书，包括 MajsoulMax-rs 的 `hudsucker.cer` 和 Akagi 的 `~/.mitmproxy/mitmproxy-ca.pem`。
 
 ## 🌟 致谢
 
