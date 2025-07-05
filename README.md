@@ -69,7 +69,7 @@
 
 4. **配置代理**
 
-   在服务器上部署后，开放防火墙对应的端口（默认 8888），代理软件分流如下规则即可。
+   在服务器上部署后，开放防火墙对应的端口（默认 8888），代理软件分流如下规则即可，注意如果是本地客户端，请开启 TUN / 增强模式以确保正确代理进程流量。
 
    以下配置在 macOS Steam 客户端和 iOS/iPadOS 港服客户端测试通过，**注意替换 `your_server_ip` / `username` / `password` 字段为你的实际值**。
 
@@ -93,6 +93,7 @@
    rules:
    -   PROCESS-NAME,雀魂麻將,🀄 雀魂麻将
    -   PROCESS-NAME,jantama_mahjongsoul.exe,🀄 雀魂麻将
+   -   PROCESS-NAME,Jantama_MahjongSoul.exe,🀄 雀魂麻将
    -   DOMAIN-SUFFIX,game.maj-soul.com,🀄 雀魂麻将
    -   DOMAIN-KEYWORD,majsoul,🀄 雀魂麻将
    -   DOMAIN-KEYWORD,maj-soul,🀄 雀魂麻将
@@ -144,6 +145,10 @@
    2. 前往 `通用-关于本机-证书信任设置`，打开 Hudsucker Industries 的选项
 
    ![image-20250703000158921](./README.assets/image-20250703000158921.png)
+
+   Windows:
+
+   点击下载下来的 `hudsucker.cer` 文件，跟随指引安装证书即可。
 
 > [!CAUTION]
 > **如果你觉得不安全，请从 [原仓库](https://github.com/Xerxes-2/MajsoulMax-rs) 中替换 CA 证书，重新编译打包二进制执行文件，然后替换 `app/` 目录下的 `majsoul_max_rs` 文件。**
@@ -204,7 +209,7 @@ docker build -t my-majsoul-max-rs .
    - 原因是 docker 默认创建的容器目录权限没有你的用户权限，需要修改目录权限。执行 `sudo chmod -R 777 app` 即可。
 
 4. **与 [Akagi](https://github.com/shinkuan/Akagi) 联合使用？**
-   - 配置你的代理链，形成 `雀魂 -> MajsoulMax-rs -> Akagi -> 官方服务器` 的代理链即可。
+   - 此时需要 Akagi 和 MajsoulMax-rs 部署在一起（同时本地或同时 VPS），然后配置你的代理链，形成 `雀魂 -> MajsoulMax-rs -> Akagi -> 官方服务器` 的代理链即可，**注意避免回环代理**，确保从 Akagi 的出流量不会被重新代理回 MajsoulMax-rs。并且你需要同时信任两个 MITM 自签名证书，包括 `MajsoulMax-rs` 的 `hudsucker.cer` 和 `Akagi` 的 `~/.mitmproxy/mitmproxy-ca.pem`。
 
 ## 🌟 致谢
 
