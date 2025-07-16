@@ -123,6 +123,8 @@
    IP-CIDR,203.107.63.200/32,🀄 雀魂麻将
    ```
 
+   注意，对于支持 PROCESS-NAME 的代理软件/平台，只需要留下 PROCESS-NAME 规则即可，其他规则可删除。IP-CIDR 和 DOMAIN-KEYWORD 规则主要用于不支持 PROCESS-NAME 的代理软件/平台（如 iOS）。
+
 5. **配置证书信任**
 
    下载 [hudsucker.cer](https://github.com/omjadas/hudsucker/blob/main/examples/ca/hudsucker.cer) 证书，并添加到本地钥匙链中。
