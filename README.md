@@ -94,7 +94,6 @@
    -   PROCESS-NAME,雀魂麻將,🀄 雀魂麻将
    -   PROCESS-NAME,jantama_mahjongsoul.exe,🀄 雀魂麻将
    -   PROCESS-NAME,Jantama_MahjongSoul.exe,🀄 雀魂麻将
-   -   DOMAIN-SUFFIX,game.maj-soul.com,🀄 雀魂麻将
    -   DOMAIN-KEYWORD,majsoul,🀄 雀魂麻将
    -   DOMAIN-KEYWORD,maj-soul,🀄 雀魂麻将
    -   DOMAIN-KEYWORD,catmjstudio,🀄 雀魂麻将
@@ -115,7 +114,6 @@
 
    [Rule]
    PROCESS-NAME,雀魂麻將,🀄 雀魂麻将
-   DOMAIN-SUFFIX,game.maj-soul.com,🀄 雀魂麻将
    DOMAIN-KEYWORD,majsoul,🀄 雀魂麻将
    DOMAIN-KEYWORD,maj-soul,🀄 雀魂麻将
    DOMAIN-KEYWORD,catmjstudio,🀄 雀魂麻将
