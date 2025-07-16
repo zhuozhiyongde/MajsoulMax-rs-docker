@@ -6,7 +6,7 @@
 
 ## 📂 目录结构
 
-| 文件/目录            | 说明                               |
+| 文件 / 目录            | 说明                               |
 | -------------------- | ---------------------------------- |
 | `Dockerfile`         | 构建应用运行环境的镜像定义         |
 | `entrypoint.sh`      | 容器启动脚本，负责下载可执行文件等 |
@@ -125,7 +125,7 @@
     IP-CIDR,203.107.63.200/32,🀄 雀魂麻将
     ```
 
-    注意，对于支持 PROCESS-NAME 的代理软件/平台，只需要留下 PROCESS-NAME 规则即可，其他规则可删除。IP-CIDR 和 DOMAIN-KEYWORD 规则主要用于不支持 PROCESS-NAME 的代理软件/平台（如 iOS）。
+    注意，对于支持 PROCESS-NAME 的代理软件 / 平台，只需要留下 PROCESS-NAME 规则即可，其他规则可删除。IP-CIDR 和 DOMAIN-KEYWORD 规则主要用于不支持 PROCESS-NAME 的代理软件 / 平台（如 iOS）。
 
 4. **配置证书信任**
 
@@ -162,9 +162,9 @@
 | -------------- | -------- | ---------------------------------------------- |
 | `username`     | `test`   | 代理 Basic Auth 的用户名                       |
 | `password`     | `123456` | 代理 Basic Auth 的密码                         |
-| `download_url` | _(可选)_ | 应用二进制压缩包的下载地址                     |
-| `http_proxy`   | _(可选)_ | 容器内 HTTP 代理，用于加速下载/访问雀魂服务器  |
-| `https_proxy`  | _(可选)_ | 容器内 HTTPS 代理，用于加速下载/访问雀魂服务器 |
+| `download_url` | _（可选）_ | 应用二进制压缩包的下载地址                     |
+| `http_proxy`   | _（可选）_ | 容器内 HTTP 代理，用于加速下载 / 访问雀魂服务器  |
+| `https_proxy`  | _（可选）_ | 容器内 HTTPS 代理，用于加速下载 / 访问雀魂服务器 |
 
 其中 `download_url` 为可选：
 
@@ -216,11 +216,11 @@ chmod +x build.sh
     - 先尝试切换游戏内连接线路，如果不行再按照如下思路进行排查：
         1. 代理节点是否通畅（使用 curl 测试，检查服务器是否放行对应端口 TCP/UDP）
         2. 检查自签名证书是否正确安装并信任
-        3. 检查代理软件 TUN 模式是否开启，以及对应软件/域名/IP 是否被规则正确分流
+        3. 检查代理软件 TUN 模式是否开启，以及对应软件 / 域名 / IP 是否被规则正确分流
         4. 如果还有问题，请提 issue。
 
 5. **与 [Akagi](https://github.com/shinkuan/Akagi) 联合使用？**
-    - 此时需要 Akagi 和 MajsoulMax-rs 部署在一起（同时本地或同时 VPS），然后配置你的代理链，形成 `雀魂 -> MajsoulMax-rs -> Akagi -> 官方服务器` 的代理链即可，**注意避免回环代理**，确保从 Akagi 的出流量不会被重新代理回 MajsoulMax-rs。并且你需要同时信任两个 MITM 自签名证书，包括 MajsoulMax-rs`的`hudsucker.cer`和`Akagi`的`~/.mitmproxy/mitmproxy-ca.pem`。
+    - 此时需要 Akagi 和 MajsoulMax-rs 部署在一起（同时本地或同时 VPS），然后配置你的代理链，形成 `雀魂 -> MajsoulMax-rs -> Akagi -> 官方服务器` 的代理链即可，**注意避免回环代理**，确保从 Akagi 的出流量不会被重新代理回 MajsoulMax-rs。并且你需要同时信任两个 MITM 自签名证书，包括 MajsoulMax-rs 的 `hudsucker.cer` 和 Akagi 的 `~/.mitmproxy/mitmproxy-ca.pem`。
 
 ## 🌟 致谢
 
