@@ -28,7 +28,6 @@
     services:
         majsoul-proxy:
             image: arthals/majsoul-max-rs:latest # 你可以替换为自己构建的镜像名
-            build: . # 如果你想用上面的 Dockerfile 本地构建，请取消此行注释
             restart: unless-stopped
             ports:
                 # 将容器的 23411 端口映射到宿主机的 8888 端口
