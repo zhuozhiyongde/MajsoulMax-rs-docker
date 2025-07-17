@@ -152,7 +152,8 @@
 
     点击下载下来的 `hudsucker.cer` 文件，跟随指引安装证书即可。
 
-> [!CAUTION] > **如果你觉得不安全，请从 [原仓库](https://github.com/Xerxes-2/MajsoulMax-rs) 中替换 CA 证书，重新编译打包二进制执行文件，然后替换 `app/` 目录下的 `majsoul_max_rs` 文件。**
+> [!CAUTION]
+> **如果你觉得不安全，请从 [原仓库](https://github.com/Xerxes-2/MajsoulMax-rs) 中替换 CA 证书，重新编译打包二进制执行文件，然后替换 `app/` 目录下的 `majsoul_max_rs` 文件。**
 
 ## ⚙️ 参数说明
 
