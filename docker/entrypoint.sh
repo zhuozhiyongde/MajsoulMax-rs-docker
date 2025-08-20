@@ -66,5 +66,28 @@ chown -R tinyproxy:tinyproxy /var/log/tinyproxy /run/tinyproxy
 
 # --- 4. 启动服务 ---
 echo "Starting services..."
-./majsoul_max_rs &
+
+# 启动 majsoul_max_rs 进程监控函数
+start_majsoul_with_monitoring() {
+  while true; do
+    echo "Starting majsoul_max_rs..."
+    ./majsoul_max_rs &
+    MAJSOUL_PID=$!
+    echo "majsoul_max_rs started with PID: $MAJSOUL_PID"
+    
+    # 等待进程退出
+    wait $MAJSOUL_PID
+    EXIT_CODE=$?
+    echo "majsoul_max_rs process exited with code: $EXIT_CODE"
+    
+    # 立即重启进程
+    echo "Restarting majsoul_max_rs..."
+    sleep 1
+  done
+}
+
+# 在后台启动进程监控
+start_majsoul_with_monitoring &
+
+# 启动 tinyproxy
 exec tinyproxy -d
