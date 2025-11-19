@@ -3,10 +3,10 @@ set -e
 cd /app
 
 if [ -n "${http_proxy}" ]; then
-  HTTP_PROXY=${http_proxy}
+  export HTTP_PROXY=${http_proxy}
 fi
 if [ -n "${https_proxy}" ]; then
-  HTTPS_PROXY=${https_proxy}
+  export HTTPS_PROXY=${https_proxy}
 fi
 
 # 若用户未提供 download_url，则自动检测最新 release 对应的 x86_64 Linux 归档，并生成 DOWNLOAD_URL
