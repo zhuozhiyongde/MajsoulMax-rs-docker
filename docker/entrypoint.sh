@@ -16,7 +16,7 @@ else
   echo "download_url 未指定，正在获取最新 release 信息..."
   DOWNLOAD_URL=$(curl -s https://api.github.com/repos/Xerxes-2/MajsoulMax-rs/releases/latest \
     | grep browser_download_url \
-    | grep x86_64-unknown-linux-gnu.tar.gz \
+    | grep linux-x86_64.zip \
     | head -n 1 \
     | cut -d '"' -f 4)
 fi
@@ -28,10 +28,10 @@ if [ ! -f "majsoul_max_rs" ]; then
   
   # 根据下载链接推导归档文件名及解压后的根目录
   ARCHIVE_NAME=$(basename "${DOWNLOAD_URL}")
-  EXTRACT_DIR="${ARCHIVE_NAME%.tar.gz}"
+  EXTRACT_DIR="${ARCHIVE_NAME%.zip}"
 
   wget --no-check-certificate "${DOWNLOAD_URL}" -O "${ARCHIVE_NAME}" && \
-    tar -xzf "${ARCHIVE_NAME}" && \
+    unzip "${ARCHIVE_NAME}" && \
     mv "${EXTRACT_DIR}"/* . && \
     rm -rf "${ARCHIVE_NAME}" "${EXTRACT_DIR}" && \
     chmod +x ./majsoul_max_rs

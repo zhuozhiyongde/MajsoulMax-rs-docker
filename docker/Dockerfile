@@ -6,7 +6,7 @@ WORKDIR /app
 
 # 安装依赖
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends wget curl tar tinyproxy ca-certificates && \
+    apt-get install -y --no-install-recommends wget curl tar tinyproxy ca-certificates unzip && \
     rm -rf /var/lib/apt/lists/*
 
 # 创建软链接，将配置文件链接到工作目录
