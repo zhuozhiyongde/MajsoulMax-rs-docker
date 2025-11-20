@@ -38,9 +38,9 @@
                 - username=test
                 - password=123456
                 # Github 代理下载
-                - download_url=https://ghproxy.net/https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.7/majsoul_max_rs-0.6.7-x86_64-unknown-linux-gnu.tar.gz
+                - download_url=https://ghproxy.net/https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.10/majsoul_max_rs-linux-x86_64.zip
                 # 原始下载
-                # - download_url=https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.7/majsoul_max_rs-0.6.7-x86_64-unknown-linux-gnu.tar.gz
+                # - download_url=https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.10/majsoul_max_rs-linux-x86_64.zip
                 # 可选：代理下载
                 # - http_proxy=${HTTP_PROXY:-http://172.17.0.1:7890}
                 # - https_proxy=${HTTPS_PROXY:-http://172.17.0.1:7890}
@@ -168,8 +168,8 @@
 
 其中 `download_url` 为可选：
 
--   （默认值）GitHub 官方：https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.7/majsoul_max_rs-0.6.7-x86_64-unknown-linux-gnu.tar.gz
--   （可选）GitHub 代理：https://ghproxy.net/https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.7/majsoul_max_rs-0.6.7-x86_64-unknown-linux-gnu.tar.gz
+-   （默认值）GitHub 官方：https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.10/majsoul_max_rs-linux-x86_64.zip
+-   （可选）GitHub 代理：https://ghproxy.net/https://github.com/Xerxes-2/MajsoulMax-rs/releases/download/0.6.10/majsoul_max_rs-linux-x86_64.zip
 
 注意原作者更新后请同样更新 `download_url` 为最新版本。
 
